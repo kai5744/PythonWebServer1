@@ -1,2 +1,12 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
-HTTPServer(("", 8080), SimpleHTTPRequestHandler).serve_forever()
+class HelloWorldHandler(SimpleHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'hello world')
+        else:
+            super().do_GET()
+
+HTTPServer(("", 8080), HelloWorldHandler).serve_forever()
