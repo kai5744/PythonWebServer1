@@ -14,6 +14,12 @@ class HelloWorldHandler(SimpleHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'{"status":"ok"}')
 
+        elif self.path == '/version':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"version":"1.0.0"}')
+
         else:
             super().do_GET()
 
