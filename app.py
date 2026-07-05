@@ -49,5 +49,5 @@ class HelloWorldHandler(SimpleHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
-print('this server is a server and its very good at servering lmao')
+print('this server is a very good server')
 HTTPServer(("", 8080), HelloWorldHandler).serve_forever()  
