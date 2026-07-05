@@ -49,5 +49,5 @@ class HelloWorldHandler(SimpleHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
-print('hi i am still a server buenos dias')
+print('howdy im a server and i love serving. server says while chuckling')
 HTTPServer(("", 8080), HelloWorldHandler).serve_forever()  
