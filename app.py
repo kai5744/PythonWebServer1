@@ -47,6 +47,13 @@ class HelloWorldHandler(SimpleHTTPRequestHandler):
             self.wfile.write(response)
         else:
             self.send_response(404)
+            self.end_headers() 
+
+     elif self.path == '/ninchi':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
+            self.wfile.write(b'{"message":"Ninchi check passed"}')
+
 
 HTTPServer(("", 8080), HelloWorldHandler).serve_forever()
