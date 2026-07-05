@@ -51,4 +51,5 @@ class HelloWorldHandler(SimpleHTTPRequestHandler):
 print('I AM A SERVER')
 print('hi i am still a server buenos dias')
 print('hi this is server what is your name')
+print('yo server wsg')
 HTTPServer(("", 8080), HelloWorldHandler).serve_forever()  
