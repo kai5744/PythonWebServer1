@@ -47,6 +47,8 @@ class HelloWorldHandler(SimpleHTTPRequestHandler):
             self.wfile.write(response)
         else:
             self.send_response(404)
-            self.end_headers()
+            self.end_headers() 
+
+print('hi im a server')
 
 HTTPServer(("", 8080), HelloWorldHandler).serve_forever()
